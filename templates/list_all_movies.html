@@ -7,6 +7,7 @@
 <p class="mb-3">See our list of movie ratings below</p>
 <table class="table">
   <thead>
+
     <tr>
       <th>Title</th>
       <th>Director</th>
@@ -15,6 +16,16 @@
   </thead>
   <tbody>
     <!-- TODO - Render movies in a table with a link on the title to the individual movie page -->
+    //Linked the movie titles with the table
+      {% for movie in movies %}
+      <tr>
+        <td><a href="/movies/{{ movie.movie_id }}">{{ movie.title }}</a></td>
+        <td>{{ movie.director }}</td>
+        <td>{{ movie.rating }}</td>
+      </tr>
+    {% endfor %}
+  
+    
   </tbody>
 </table>
 {% endblock %}
